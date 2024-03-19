@@ -30,6 +30,10 @@ public class Rotate : MonoBehaviour
     void ShowInertia()
     {
         Debug.Log(this.name + "Inertia :" + rb.inertiaTensor);
+        rb.angularVelocity = rb.inertiaTensor;
+
+        transform.localScale += new Vector3(Input.GetAxis("Horizontal"),0,0);
+
     }
     private void RotateTorque()
     {
