@@ -16,6 +16,8 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        ShowInertia();
+
         if (Input.GetMouseButtonDown(0))
         {
             RotateAngularV();
@@ -25,7 +27,10 @@ public class Rotate : MonoBehaviour
             RotateTorque();
         }
     }
-
+    void ShowInertia()
+    {
+        Debug.Log(this.name + "Inertia :" + rb.inertiaTensor);
+    }
     private void RotateTorque()
     {
         rb.AddTorque(torque);
